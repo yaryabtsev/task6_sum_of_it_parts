@@ -14,9 +14,14 @@ class Part
 {
 public:
     string name;
+
+
     Part(string const &n) : name(n) {};
     void describe(void);
     int count_howmany(Part const *p);
+    void add(pair<Part *, int> const p);
+private:
+    map<Part*, int> dict;
 };
 
 //**************** NameContainer ****************
@@ -25,6 +30,7 @@ class NameContainer
 
 private:
 	map<string,Part*> name_map;
+
 
 public:
 	NameContainer(void) {};
