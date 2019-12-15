@@ -9,12 +9,10 @@ void Part::describe(void)
     if (!dict.empty())
     {
         cout << name << " include :";
-        map<Part*, int>::iterator it = dict.begin();
-        while (it != dict.end())
-        {
-            cout << ' ' << it->second << ' ' << it->first->name << (it->second > 1) ? "(s)" : "";
-            cout << (++it == dict.end()) ? ' ' : ',';
-        }
+
+        for (map<Part *, int>::iterator it = dict.begin();
+             it != dict.end(); cout << (((++it) == dict.end()) ? ' ' : ','))
+            cout << ' ' << it->second << ' ' << it->first->name << ((it->second > 1) ? "(s)" : "");
     }
     else
         cout << name << "is empty";
