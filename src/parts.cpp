@@ -6,17 +6,15 @@ using namespace std;
 
 void Part::describe(void)
 {
+    cout << "Part " << name << "subparts are:\n";
     if (!dict.empty())
     {
-        cout << name << " include :";
-
         for (map<Part *, int>::iterator it = dict.begin();
-             it != dict.end(); cout << (((++it) == dict.end()) ? ' ' : ','))
-            cout << ' ' << it->second << ' ' << it->first->name << ((it->second > 1) ? "(s)" : "");
+             it != dict.end(); cout << (((++it) == dict.end()) ? "\n " : ",\n "))
+            cout << '\t' << it->second << ' ' << it->first->name << ((it->second > 1) ? "(s)" : "");
     }
     else
-        cout << name << "is empty";
-    cout << '\n';
+        cout << "\tIt has no subparts.";
 }
 
 int Part::count_howmany(Part const* p)

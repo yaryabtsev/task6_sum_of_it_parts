@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(SpellChecking CXX)
+project(SumOfItParts CXX)
 if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Debug)
 endif(NOT CMAKE_BUILD_TYPE)
